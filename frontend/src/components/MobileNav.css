@@ -1,0 +1,126 @@
+/* ============================================================
+   ТАББАР — ТОЧЬ-В-ТОЧЬ КАК В МОКАПЕ MATCHUP
+   ============================================================ */
+
+:root {
+  --pitch: #0F231C;
+  --slate: #2A4238;
+  --chalk-dim: #B9C4BD;
+  --cone: #FF5A1F;
+  --volt: #B8FF3D;
+}
+
+.navbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 76px;
+  flex-shrink: 0;
+  background: #0B1E17;
+  border-top: 1px solid var(--slate);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-bottom: 14px;
+  z-index: 1000;
+}
+
+.navitem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  color: var(--chalk-dim);
+  font-size: 10.5px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-tap-highlight-color: transparent;
+  transition: color 0.2s ease;
+}
+
+.navitem svg {
+  width: 24px;
+  height: 24px;
+  display: block;
+  color: var(--chalk-dim);
+  transition: color 0.2s ease;
+}
+
+.navitem.active svg {
+  color: var(--volt);
+}
+
+.navitem.active {
+  color: var(--volt);
+}
+
+.navitem .fab {
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  background: var(--cone);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2px;
+  color: var(--pitch);
+  margin-top: -20px;
+  box-shadow: 0 6px 16px rgba(255, 90, 31, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.navitem .fab:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 24px rgba(255, 90, 31, 0.5);
+}
+
+.navitem .fab:active {
+  transform: scale(0.92);
+}
+
+.navitem .fab svg {
+  width: 24px;
+  height: 24px;
+  color: var(--pitch);
+}
+
+/* ============================================================
+   АДАПТИВ — ПОКАЗЫВАЕМ ТОЛЬКО НА МОБИЛЬНЫХ
+   ============================================================ */
+
+@media (min-width: 769px) {
+  .navbar {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    display: flex;
+  }
+}
+
+@media (max-width: 400px) {
+  .navitem {
+    font-size: 9px;
+  }
+  
+  .navitem svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .navitem .fab {
+    width: 40px;
+    height: 40px;
+    margin-top: -16px;
+  }
+  
+  .navitem .fab svg {
+    width: 20px;
+    height: 20px;
+  }
+}
